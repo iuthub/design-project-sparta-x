@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('quantity');
             $table->string('address');
             $table->string('phone_number');
+            $table->enum('status', ['waiting', 'accepted', 'refused', 'delivered']);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
