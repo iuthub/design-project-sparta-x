@@ -76,7 +76,14 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' =>'required'
+        ]);
+        $category=Category::find($id);
+
+        $category->update($request->all());
+
+        return redirect()->route('categories.index');
     }
 
     /**

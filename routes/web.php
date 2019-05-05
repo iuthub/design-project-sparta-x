@@ -28,6 +28,12 @@ Route::group(['namespace' => 'Cabinet', 'prefix' => 'cabinet', 'middleware' => '
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin' /*, 'middleware' =>'admin'*/], function(){
 //    Route::get('/', 'DashboardController@index');
     Route::resource('/products', 'ProductsController');
+    Route::get('/products/image/edit/{id}', 'ProductsController@edit_image')->name('product.image_edit');
+    Route::post('/products/image/edit', 'ProductsController@update_image')->name('product.image_update');
+    Route::delete('/products/image/delete', 'ProductsController@delete_image')->name('product.image_delete');
+    Route::post('/products/image/add', 'ProductsController@add_image')->name('product.image_add');
+
+
     Route::resource('/categories', 'CategoriesController');
 //    Route::resource('/users', 'UsersController');
 

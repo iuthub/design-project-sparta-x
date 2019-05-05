@@ -26,7 +26,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="food-cost">sum</span>
                         </div>
-                        <input type="number" class="form-control" id="validationDefaultUsername" placeholder="0.0" aria-describedby="inputGroupPrepend2" required>
+                        <input name="price" type="number" class="form-control" id="validationDefaultUsername" placeholder="0.0" aria-describedby="inputGroupPrepend2" required>
                     </div>
                 </div>
                 <div class="col-md-6">
