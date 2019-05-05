@@ -39,9 +39,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin' /*, 'middleware' =>'ad
     Route::post('/products/image/edit', 'ProductsController@update_image')->name('product.image_update');
     Route::delete('/products/image/delete', 'ProductsController@delete_image')->name('product.image_delete');
     Route::post('/products/image/add', 'ProductsController@add_image')->name('product.image_add');
+    Route::resource('/users', 'UsersController');
+
+    Route::resource('/orders', 'OrdersController');
 
 
     Route::resource('/categories', 'CategoriesController');
-//    Route::resource('/users', 'UsersController');
 
 });

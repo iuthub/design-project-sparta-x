@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Order;
 class OrdersController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $orders=Order::all();
+        return view('admin.orders.index', ['orders'=>$orders]);
     }
 
     /**
@@ -57,7 +58,8 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order=Order::find($id);
+        return view('admin.orders.edit', ['order'=>$order]);
     }
 
     /**
@@ -69,7 +71,7 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -80,6 +82,7 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Order::find($id)->delete();
+        return redirect()->back();
     }
 }

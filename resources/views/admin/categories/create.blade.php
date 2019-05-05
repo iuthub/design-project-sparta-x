@@ -1,5 +1,6 @@
 @extends('admin.layout')
 @section('content')
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="container mt-4">
         <form action="{{route('categories.store')}}" class="form-group" method="post">
             @csrf
@@ -8,4 +9,5 @@
             <button class="btn btn-success float-right mt-2" type="submit">Add</button>
         </form>
     </div>
+</main>
 @endsection

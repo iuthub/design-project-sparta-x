@@ -36,4 +36,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function add($fields)
+    {
+        $user= new static;
+        $user->fill($fields);
+        $user->password=bcrypt($fields['password']);
+        $user->save();
+        return $user;
+    }
+
+    public function edit($fields)
+    {
+
+        $this->fill($fields);
+        $this->password=$fields['password'];
+        $this->save();
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
 }
