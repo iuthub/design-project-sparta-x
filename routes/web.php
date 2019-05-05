@@ -18,14 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//orders
+Route::get('/order/details/{product_id}', 'OrderController@details')->where('product_id', '[0-9]+')->name('details');
+Route::post('/order/store', 'OrderController@store')->name('makeOrder');
+
+//products
+Route::get('/product/show/{product_id}', 'ProductController@show')->where('product_id', '[0-9]+');
+
+//Cabinet
 
 Route::group(['namespace' => 'Cabinet', 'prefix' => 'cabinet', 'middleware' => 'auth'], function () {
     Route::get('/', 'CabinetController@myOrders');
     Route::get('/my-orders', 'CabinetController@myOrders');
 });
 
-
-Route::group(['prefix'=>'admin', 'namespace'=>'Admin' /*, 'middleware' =>'admin'*/], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin' /*, 'middleware' =>'admin'*/], function () {
 //    Route::get('/', 'DashboardController@index');
     Route::resource('/products', 'ProductsController');
     Route::get('/products/image/edit/{id}', 'ProductsController@edit_image')->name('product.image_edit');
