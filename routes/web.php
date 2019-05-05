@@ -19,6 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//orders
+Route::get('/order/details/{product_id}', 'OrderController@details')->where('product_id', '[0-9]+')->name('details');
+Route::post('/order/store', 'OrderController@store')->name('makeOrder');
+
+//products
+Route::get('/product/show/{product_id}', 'ProductController@show')->where('product_id', '[0-9]+');
+
+//Cabinet
 Route::group(['namespace' => 'Cabinet', 'prefix' => 'cabinet', 'middleware' => 'auth'], function () {
     Route::get('/', 'CabinetController@myOrders');
     Route::get('/my-orders', 'CabinetController@myOrders');
