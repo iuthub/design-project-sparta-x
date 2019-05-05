@@ -1,0 +1,34 @@
+#login-form, #registration-form, #order-form{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.form-button{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(90deg, #8DDE8B 0%, #5DC153 100%);
+    border-radius: 23.5px;
+    border: 0;
+}
+
+#login-form .form-control:focus, #registration-form .form-control:focus, #order-form .form-control:focus {
+    border-color: #4DBC4B;
+    box-shadow: 0 0 0 0.2rem rgba(77,188,75, 0.25);
+}
+
+#login-form input.form-control, #registration-form input.form-control, #order-form input.form-control{
+    border-radius: 23px;
+    background-color: #F0F2F3;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#login-form .card-body, #registration-form .card-body, #order-form .card-body{
+    padding: 1.5rem;
+}
+
+#login-form a, #registration-form a, #order-form a{
+    color:#4DBC4B;
+}
