@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin' /*, 'middleware' =>'admin'*/], function(){
+//    Route::get('/', 'DashboardController@index');
+    Route::resource('/products', 'ProductsController');
+    Route::resource('/categories', 'CategoriesController');
+//    Route::resource('/users', 'UsersController');
+
+});
