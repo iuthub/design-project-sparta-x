@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 class AddNameColumnToOrders extends Migration
 {
     /**
@@ -15,6 +16,8 @@ class AddNameColumnToOrders extends Migration
             $table->string('contact_name')->after('quantity');
         });
     }
+
+
     /**
      * Reverse the migrations.
      *
@@ -26,4 +29,5 @@ class AddNameColumnToOrders extends Migration
             $table->dropColumn('contact_name');
         });
     }
+
 }
