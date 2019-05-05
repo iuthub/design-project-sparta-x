@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['namespace' => 'Cabinet', 'prefix' => 'cabinet', 'middleware' => 'auth'], function () {
+    Route::get('/', 'CabinetController@myOrders');
+    Route::get('/my-orders', 'CabinetController@myOrders');
+});
+
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin' /*, 'middleware' =>'admin'*/], function(){
 //    Route::get('/', 'DashboardController@index');
     Route::resource('/products', 'ProductsController');
