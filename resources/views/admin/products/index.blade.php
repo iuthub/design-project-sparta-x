@@ -26,7 +26,7 @@
                        <td>{{$product->price}} sum</td>
                        <td align="right">
                            <form action="{{route('products.destroy', $product->id)}}"method="post">
-                               <a href="" class="btn btn-info">view</a>
+                               <a href="{{route('products.show', $product->id)}}" class="btn btn-info">view</a>
                                <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning">edit</a>
 
                                <input type="hidden" name="_method" value="delete">
