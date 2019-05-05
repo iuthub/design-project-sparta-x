@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section#header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #F8F8F8;
+    width: 100%;
+    height: 37vh;
+}
+
+.header-section {
+    position: absolute;
+    width: 100%;
+}
+
+.navbar-nav>li a {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.banner {
+    margin-top: 25px;
+}
+
+.big-title {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.big-title h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 51px;
+    letter-spacing: 0.02em;
+    color: #3A3F5C;
+    margin-top: 100px;
+    white-space: pre;
+}
+
+.order-button {
+    background: linear-gradient(90deg, #8DDE8B 0%, #5DC153 100%);
+    border-radius: 43px;
+    height: 44px;
+    width: 202px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.order-button {
+    text-decoration: none;
+    color: #fff;
+}
+
+.order-button:hover {
+    transition: ease-out;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: #fff;
+}
+
+#curve {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#curve path {
+    fill: #fff;
+}
+
+section.sec2 {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+}
+
+.broclli {
+    position: absolute;
+    right: 0;
+    top: 100;
+}
+.single-page{
+    margin-top: 30px;
+}
+.img-box img{
+    width: 100%;
+    height: auto;
+}
+.gallery{
+    margin-top: 30px;
+}
+.single-img{
+    width: 100%;
+    cursor: pointer;
+}
+.single-img img{
+    width: 50%;
+}
+.fa-arrow-left, .fa-arrow-right{
+   display: none!important;
+}
+.price ul li {
+    list-style: none;
+}
+.price ul li p {
+    display: inline-block;
+    margin-left: 5px;
+}
+.fa-dollar-sign:before {
+    content: "\f155";
+}
+.order-img{
+    display: inline-block;
+}
+.order-img img{
+    width: 100%;
+}
+.responsive-list{
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #4dbc4b;
+}
+.fa-car-side:before {
+    content: "\f5e4";
+}
+
+
+/* @media (max-width: 720px) {
+    .hidden {
+        display: none;
+    }
+} */
