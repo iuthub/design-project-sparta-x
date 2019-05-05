@@ -5,6 +5,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     width: 100%;
+    background: white;
 }
 
 section#header {
@@ -13,6 +14,9 @@ section#header {
     padding: 0;
     background: #F8F8F8;
     width: 100%;
+}
+
+.vh {
     height: 100vh;
 }
 
@@ -33,6 +37,12 @@ section#header {
 
 .banner {
     margin-top: 25px;
+    position: relative;
+}
+
+.bg-image {
+    right: 0;
+    left: 150px;
 }
 
 .big-title {
@@ -54,13 +64,23 @@ section#header {
 
 .order-button {
     background: linear-gradient(90deg, #8DDE8B 0%, #5DC153 100%);
-    border-radius: 43px;
+    border-radius: 40px;
     height: 44px;
-    width: 202px;
+    width: 150px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
 }
+
+.features {
+    margin-top: 30px;
+}
+
+.features img {
+    margin-left: 25px;
+}
+
+.call-center-menu {}
 
 .order-button {
     text-decoration: none;
@@ -95,11 +115,8 @@ section.sec2 {
     right: 0;
     top: 100;
 }
-/* @media (max-width: 720px) {
-.hidden {
-    display: none;
-}
-} */
+
+.order-now {}
 
 .content {
     margin-top: 30px;
@@ -247,7 +264,7 @@ section.sec2 {
     height: 40px;
     border-radius: 23.5px;
     border: none;
-    color: #EBEBEB;
+    color: white;
     background: linear-gradient(90deg, #8DDE8B 0%, #5DC153 100%);
 }
 
@@ -260,5 +277,9 @@ section.sec2 {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, #7DCA7B 0%, #68BE66 100%);
+    color: white;
+}
+
+.copyright a {
     color: white;
 }

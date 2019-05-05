@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Category::class, 5)->create()->each(function ($category) {
+        factory(App\Category::class, 6)->create()->each(function ($category) {
             $rand = random_int(1, 10);
 
             while ($rand > 0)

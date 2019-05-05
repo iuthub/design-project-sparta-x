@@ -43,10 +43,27 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Foods</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Help</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{route('login')}}">Sign In</a></li>
                     <li><a href="#">Call center +998 97 7067633</a></li>
                 </ul>
             </div>

@@ -36,7 +36,7 @@ class OrderController extends Controller
                 ->withInput();
         }
 
-        Order::create([
+        $order = Order::create([
             'user_id' => auth()->id(),
             'product_id' => $request->product_id,
             'contact_name' => $request->contact_name,
@@ -44,5 +44,13 @@ class OrderController extends Controller
             'address' => $request->address,
             'quantity' => $request->quantity,
         ]);
+
+        if ($order) {
+            return redirect('order.success');
+        }
+    }
+
+    public function success() {
+        return view('order.success');
     }
 }

@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index($category_id = null)
     {
-        $categories = Category::all();
+        $categories = Category::all()->take(6);
         $products = Product::all()->take(6);
         if ($category_id != null) {
             $products = Product::where(['category_id' => $category_id])->get();

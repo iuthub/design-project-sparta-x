@@ -16,4 +16,13 @@ class ProductController extends Controller
             'product' => $product
         ]);
     }
+
+    public function list($category_id)
+    {
+        $products = Product::where(['category_id' => $category_id])->get();
+
+        return view('product.list', [
+            'products' => $products
+        ]);
+    }
 }

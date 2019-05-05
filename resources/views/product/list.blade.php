@@ -1,28 +1,7 @@
-@extends('layouts.home')
+@extends('layouts.app')
 
 @section('content')
-
-    <div class="container">
-        <div class="categories-title">
-            <div class="container">
-                <h1>
-                    Choose a category
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit esse voluptas blanditiis illo velit voluptatem ea aperiam voluptates animi necessitatibus, facere maxime debitis iusto itaque quisquam maiores! Eligendi, exercitationem dolore.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="categories">
-            @foreach($categories as $category)
-                <a href="{{route('product.list', ['category_id' => $category->id])}}"
-                   class="btn btn-success"><span>{{$category->title}}</span></a>
-            @endforeach
-        </div>
-
-
+    <div class="container mt-5">
         <div class="row food-set">
             @foreach($products as $product)
                 <div class="col-md-4 col-lg-4 col-xs-12">
@@ -46,6 +25,11 @@
             @endforeach
 
         </div>
+        <!--
+        <div class="pagination">
+            <a href="" class="btn  btn-circle"><i class="fa fa-arrow-left"></i></a>
+            <a href="" class="btn  btn-circle"><i class="fa fa-arrow-right"></i></a>
+        </div> -->
 
     </div>
 @endsection
