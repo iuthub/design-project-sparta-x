@@ -43,7 +43,6 @@ class ProductsController extends Controller
             'title' => 'required',
             'price' => 'required',
             'image' => 'image|nullable'
-
         ]);
     }
 
