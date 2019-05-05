@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\User;
+use Illuminate\Validation\Rule;
 class UsersController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users=User::all();
+        return view('admin.users.index', ['users'=>$users]);
     }
 
     /**
@@ -24,18 +26,72 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required',
+
+        ]);
+        $user=User::add($request->all());
+
+        return redirect()->route('users.index');
+    }
+
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user=User::find($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user=User::find($id);
+
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users')->ignore($user->id),
+            ],
+        ]);
+        if($request->get('password')==null)
+        {
+            $request['password']=$user->password;
+        }
+        else
+        {
+            $request['password']=bcrypt($request->get('password'));
+        }
+         $user->edit($request->all());
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -46,40 +102,20 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user=User::find($id);
+        return view('admin.users.show', ['user'=>$user]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect()->route('users.index');
     }
 }

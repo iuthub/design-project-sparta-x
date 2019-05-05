@@ -1,5 +1,6 @@
 @extends('admin.layout')
 @section('content')
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="container">
         <a class="btn btn-success my-3 px-3" href="{{route('categories.create')}}">Add</a>
         <table class="table">
@@ -19,7 +20,7 @@
                     <td>{{$category->title}}</td>
                     <td align="right">
                         <form action="{{route('categories.destroy', $category->id)}}"method="post">
-                        <a href="" class="btn btn-info">view</a>
+                        {{--<a href="" class="btn btn-info">view</a>--}}
                         <a href="{{route('categories.edit', $category->id)}}" class="btn btn-warning">edit</a>
 
                             <input type="hidden" name="_method" value="delete">
@@ -33,5 +34,5 @@
         </table>
 
     </div>
-
+</main>
 @endsection
